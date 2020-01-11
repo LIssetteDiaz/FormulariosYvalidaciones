@@ -1,0 +1,52 @@
+<div class="container pb-3 rounded-top rounded-bottom">
+
+  <h1 class="text-center">Registro de ventas</h1>
+
+  <div class="card bg-dark">
+    <%= form_with model: @sale do |f| %>
+      <div class="container  pt-3 pb-3 rounded-top rounded-bottom">
+        <div class="row">
+          <div class="col-5 text-right">
+            <%= f.label :cod, "Codigo:" %>
+            <br>
+            <br>
+            <%= f.label :detail, "Detalle:" %>
+            <br>
+            <br>
+            <br>
+            <%= f.label :category, "Categoria:" %>
+            <br>
+            <br>
+            <%= f.label :value, "Valor:" %>
+            <br>
+            <br>
+            <%= f.label :discount, "Descuento:" %>
+            <br>
+            <br>
+            <%= f.label :tax, "Exento de IVA:" %>
+          </div>
+          <div class="col-7">
+            <%= f.number_field :cod, class: 'rounded-top rounded-bottom' %>
+            <br>
+            <br>
+            <%= f.text_area :detail, class: 'rounded-top rounded-bottom' %>
+            <br>
+            <br>
+            <%= f.text_field :category, class: 'rounded-top rounded-bottom' %> "Categoria debe ser uno, dos, tres, cuatro, cinco"
+            <br>
+            <br>
+            <%= f.number_field :value, class: 'rounded-top rounded-bottom' %>
+            <br>
+            <br>
+            <%= f.number_field :discount, class: 'rounded-top rounded-bottom' %> "Descuento maximo 40%"
+            <br>
+            <br>
+            Si <%= f.check_box :tax, class: 'rounded-top rounded-bottom' %> No <%= f.check_box class: 'rounded-top rounded-bottom' %>
+          </div>
+        </div>
+
+        <%= f.submit "crear", class: 'btn btn-dark' %>
+      <% end %>
+    </div>
+  </div>
+</div>

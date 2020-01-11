@@ -1,0 +1,41 @@
+
+<div class="container pt-3">
+
+  <h1>El registro fue almacenado con éxito!</h1>
+
+ <div class="card bg-dark">
+
+    <table class="container">
+      <thead>
+        <th>Registro</th>
+        <th>Detalle</th>
+        <th>Valor</th>
+        <th>Descuento</th>
+        <th>IVA</th>
+        <th>Total</th>
+      </thead>
+
+      <tbody>
+        <% @sales.each do |f| %>
+        <tr>
+          <td> <%= f.cod %> </td>
+          <td> <%= f.detail %> </td>
+          <td> <%= f.value %> </td>
+          <td> <%= f.discount %> </td>
+          <td>
+            <%=
+            if f.tax == 1
+            "0%"
+            else
+            "19%"
+            end
+            %></td>
+          <td> <%= f.total %> </td>
+        </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+  </div>
+  <%= link_to "Volver", sales_new_path, class: 'btn btn-dark mt-2 mb-2' %>
+</div>
